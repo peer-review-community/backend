@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: sbtscala/scala-sbt:1.8_1.9.3_3.3.0
     steps:
       - name: SBT action test
         id: sbt
