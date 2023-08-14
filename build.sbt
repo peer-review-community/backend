@@ -16,9 +16,20 @@ lazy val root = (project in file("."))
     name := "Peer Review Community",
     idePackagePrefix := Some("community.review"),
     libraryDependencies ++= Seq(
+
+      // BDD configuration
+
       "io.cucumber" %% "cucumber-scala" % cucumberVersion % "test",
       "io.cucumber" % "cucumber-junit" % cucumberJUnitVersion % "test",
       "junit" % "junit" % junitVersion % "test",
-      "com.novocode" % "junit-interface" % junitInterfaceVersion % "test"
+      "com.novocode" % "junit-interface" % junitInterfaceVersion % "test",
+
+      // Property testing configuration
+
+      "org.scalactic" %% "scalactic" % "3.2.16",
+      "org.scalatest" %% "scalatest" % "3.2.16" % "test",
+      "org.scalacheck" %% "scalacheck" % "1.17.0" % "test",
+      "org.scalatestplus" %% "scalacheck-1-17" % "3.2.16.0" % "test",
+
     )
   )
