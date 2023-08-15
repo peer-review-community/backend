@@ -18,6 +18,7 @@
 - [Http4s](https://http4s.org/getting-help.html)
 - [GraphQL](https://graphql.org/)
   - [Caliban](https://ghostdogpr.github.io/caliban/docs/introduction.html) (a GraphQL server)
+  - [Sangria](https://sangria-graphql.org/) (an alternative GraphQL server if Caliban doesn't work)
 - OAuth2 server
   - [Scala OAuth2 Provider](https://github.com/nulab/scala-oauth2-provider) 
 - JSON Web Token
