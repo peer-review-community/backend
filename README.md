@@ -18,6 +18,10 @@
 - [Http4s](https://http4s.org/getting-help.html)
 - [GraphQL](https://graphql.org/)
   - [Caliban](https://ghostdogpr.github.io/caliban/docs/introduction.html) (a GraphQL server)
+- OAuth2 server
+  - [Scala OAuth2 Provider](https://github.com/nulab/scala-oauth2-provider) 
+- JSON Web Token
+  - [JWT Scala](https://github.com/jwt-scala/jwt-scala) 
 
 ## License
 
