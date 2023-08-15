@@ -31,5 +31,10 @@ lazy val root = (project in file("."))
       "org.scalacheck" %% "scalacheck" % "1.17.0" % "test",
       "org.scalatestplus" %% "scalacheck-1-17" % "3.2.16.0" % "test",
 
+      // cats + cats-effect
+
+      "org.typelevel" %% "cats-core" % "2.10.0",
+      "org.typelevel" %% "cats-effect" % "3.5.1"
+
     )
   )
