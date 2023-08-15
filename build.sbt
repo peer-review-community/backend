@@ -8,7 +8,8 @@ val cucumberVersion = "8.16.0"
 val cucumberJUnitVersion = "7.13.0"
 val junitVersion = "4.13.2"
 val junitInterfaceVersion = "0.11"
-val http4sVersion = "1.0.0-M40"
+val http4sVersion = "0.23.19"
+val calibanVersion = "2.3.0"
 
 // settings
 
@@ -48,6 +49,12 @@ lazy val root = (project in file("."))
       "org.http4s" %% "http4s-ember-server" % http4sVersion,
       "org.http4s" %% "http4s-ember-client" % http4sVersion,
       "org.http4s" %% "http4s-dsl" % http4sVersion,
+
+      // GraphQL server
+
+      "com.github.ghostdogpr" %% "caliban"                    % calibanVersion,
+      "com.github.ghostdogpr" %% "caliban-http4s"             % calibanVersion,
+      "com.softwaremill.sttp.tapir" %% "tapir-json-circe"     % "1.2.11"
 
     )
   )

@@ -16,6 +16,8 @@
 ### HTTP Server
 
 - [Http4s](https://http4s.org/getting-help.html)
+- [GraphQL](https://graphql.org/)
+  - [Caliban](https://ghostdogpr.github.io/caliban/docs/introduction.html) (a GraphQL server)
 
 ## License
 
