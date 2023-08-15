@@ -22,6 +22,7 @@
   - [Scala OAuth2 Provider](https://github.com/nulab/scala-oauth2-provider) 
 - JSON Web Token
   - [JWT Scala](https://github.com/jwt-scala/jwt-scala) 
+- [TSEC](https://github.com/jmcardon/tsec) (a security library)
 
 ## License
 
