@@ -13,6 +13,8 @@ val calibanVersion = "2.3.0"
 
 // settings
 
+resolvers +=   "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+
 lazy val root = (project in file("."))
   .settings(
     name := "Peer Review Community",
@@ -43,6 +45,8 @@ lazy val root = (project in file("."))
       "com.typesafe.slick" %% "slick" % "3.5.0-M4",
       "org.slf4j" % "slf4j-nop" % "1.7.26",
       "com.typesafe.slick" %% "slick-hikaricp" % "3.5.0-M4",
+      "com.h2database" % "h2" % "2.2.220" % "test",
+      "org.postgresql" % "postgresql" % "42.5.4",
 
       // http4s
 
@@ -54,7 +58,11 @@ lazy val root = (project in file("."))
 
       "com.github.ghostdogpr" %% "caliban"                    % calibanVersion,
       "com.github.ghostdogpr" %% "caliban-http4s"             % calibanVersion,
-      "com.softwaremill.sttp.tapir" %% "tapir-json-circe"     % "1.2.11"
+      "com.softwaremill.sttp.tapir" %% "tapir-json-circe"     % "1.2.11",
+
+      // Joda time wrapper
+
+      "com.github.nscala-time" %% "nscala-time" % "2.32.0",
 
     )
   )

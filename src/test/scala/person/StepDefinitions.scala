@@ -3,6 +3,9 @@ package person
 
 
 import io.cucumber.scala.{EN, ScalaDsl}
+import slick.jdbc.H2Profile
+
+import scala.concurrent.{Await, Future}
 
 class StepDefinitions extends ScalaDsl with EN:
 
@@ -33,6 +36,29 @@ class StepDefinitions extends ScalaDsl with EN:
         email       <- this.email;
         person      = Person(firstName, lastName, email)
     ) yield (person.run(this.incrementor).value._2)
+
+    import slick.jdbc.H2Profile.api._
+    import scala.concurrent.duration.Duration
+    import scala.concurrent.duration._
+
+    val db = Database.forConfig("h2mem1")
+    try {
+
+      val personSchema = SlickPersonSchema(H2Profile)
+      val setup = DBIO.seq(
+        (personSchema.persons.schema).create,
+        personSchema.persons += personSchema.PersonRecord(123, "John", "Snow", "john.snow@got.com")
+      )
+      val setupFuture = db.run(setup)
+      Await.result(setupFuture, Duration.Inf)
+
+      val queryFuture = db.run[Seq[personSchema.PersonRecord]](personSchema.persons.filter(_.id === 123).result)
+      val personSeq: Seq[personSchema.PersonRecord] = Await.result(queryFuture, Duration.Inf)
+
+      println("BLEEEEEP")
+      personSeq.foreach(Predef.println _)
+
+    } finally db.close
   }
 
   Then("""the person's id is {int}"""){(id: Int) =>
